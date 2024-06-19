@@ -359,20 +359,26 @@ module keycap(keyID = 0, cutLen = 0, visualizeDish = false, rossSection = false,
        translate([0,-15,-.1])cube([15,30,20]); 
 //      translate([-15.1,-15,-.1])cube([15,30,20]); 
      }
-    if(homeDot == true){
-      // center dot
-      #translate([0,0,KeyHeight(keyID)-DishHeightDif(keyID)-0.1])sphere(r = dotRadius); // center dot
-      // double bar dots
-//      rotate([-XAngleSkew(keyID),YAngleSkew(keyID),ZAngleSkew(keyID)])translate([.75,-4.5,KeyHeight(keyID)-DishHeightDif(keyID)+0.5])sphere(r = dotRadius); // center dot
-//      rotate([-XAngleSkew(keyID),YAngleSkew(keyID),ZAngleSkew(keyID)])translate([-.75,-4.5,KeyHeight(keyID)-DishHeightDif(keyID)+0.5])sphere(r = dotRadius); // center dot
-      //tri center dots
+  }
+  if(homeDot == true){
+    // center dot
+//      translate([0,0,KeyHeight(keyID)-DishHeightDif(keyID)-0.1])
+//        sphere(r = dotRadius); // center dot
+    // double bar dots
+    rotate([-XAngleSkew(keyID),YAngleSkew(keyID),ZAngleSkew(keyID)])
+      translate([.75,-4.5,KeyHeight(keyID)-DishHeightDif(keyID)+0.2])
+        sphere(r = dotRadius); // center dot
+    rotate([-XAngleSkew(keyID),YAngleSkew(keyID),ZAngleSkew(keyID)])
+      translate([-.75,-4.5,KeyHeight(keyID)-DishHeightDif(keyID)+0.2])
+        sphere(r = dotRadius); // center dot
+    //tri center dots
 //     #rotate([0,YAngleSkew(keyID),ZAngleSkew(keyID)])translate([0,0,KeyHeight(keyID)-DishHeightDif(keyID)-0.1]){
 //        rotate([0,0,0])translate([0,.75,0])sphere(r = dotRadius); // center dot
 //        rotate([0,0,120])translate([0,.75,0])sphere(r = dotRadius); // center dot
 //        rotate([0,0,240])translate([0,.75,0])sphere(r = dotRadius); // center dot
 //      }
     }
-  }
+  
   //Homing dot
   
 }
