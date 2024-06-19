@@ -1,9 +1,7 @@
 use <./MX_DES_Standard.scad>
 use <./MX_DES_Thumb.scad>
 
-// TODO - update homerow dot
-
-// Update key parameter indexes below
+// Update keyID (parameter indexes) below
 // Sets are mirrored (e.g 6 keyIDs will print 12 keys)
 sets = [
     ["R1",    [0, 0, 0, 0, 0, 0]],
@@ -15,8 +13,8 @@ sets = [
 // Variables
 includeHomeDots = true; // true to include two keys on home row with home dots
 xSpacing = 20; // Define x spacing
-ySpacing = 20;
-gen_support = 1; // * Disable support generation */
+ySpacing = 20; // Define y spacing
+gen_support = 1; // Disable support generation with 0
 
 $radious = 0.75;
 
